@@ -1,5 +1,5 @@
 {% set name = "napari-morphodynamics" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-morphodynamics-{{ version }}.tar.gz
-  sha256: f1215df9abfe67ae554f1bf3ee8b2671218014219e3b08b5dc87275ef7787577
+  sha256: f4c5793ed3ce2403e093c8f808ea5d4b2399e3620cc85b278c38b0492b1bf089
 
 build:
   noarch: python
