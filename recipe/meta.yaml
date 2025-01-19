@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-morphodynamics-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari-morphodynamics-{{ version }}.tar.gz
   sha256: f1215df9abfe67ae554f1bf3ee8b2671218014219e3b08b5dc87275ef7787577
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools
     - setuptools-scm
     - wheel
@@ -26,7 +26,7 @@ requirements:
     - napari-convpaint
     - napari-guitils
     - napari-matplotlib
-    - python >=3.9
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -37,6 +37,7 @@ test:
   requires:
     - pip
     - pyqt
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/napari-morphodynamics
